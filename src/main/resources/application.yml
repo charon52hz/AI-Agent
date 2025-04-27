@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: agent-demo  # 应用名称
+server:
+  port: 8080  # 端口号
+  servlet:
+    # 上下文路径(需要在URL中添加/api前缀才能访问应用接口)，例如:http://localhost:8080/api/hello
+    context-path: /api
+# springdoc-openapi
+springdoc:
+  swagger-ui:
+    # swagger ui访问路径 http://localhost:8080/api/swagger-ui.html
+    path: /swagger-ui.html
+    # UI中标签和操作的排序方式，alpha表示按字母顺序
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    # OpenAPI文档访问路径 http://localhost:8080/api/v3/api-docs
+    path: /v3/api-docs
+    # 对API进行分组
+  group-configs:
+    # 定义了一个分组，名称为default，匹配所有路径
+    group: 'default'
+    paths-to-match: '/**'
+    package-to-match: org.chz.agentdemo.controller
+  # knife4j
+  knife4j:
+    enable: true
+    settings:
+      language: zh_cn
