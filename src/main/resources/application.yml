@@ -1,11 +1,20 @@
 spring:
   application:
     name: agent-demo  # 应用名称
+  ai:
+    dashscope:
+      api-key: 你的API_KEY
+      chat:
+        options:
+          model: qwen-plus
 server:
   port: 8080  # 端口号
   servlet:
     # 上下文路径(需要在URL中添加/api前缀才能访问应用接口)，例如:http://localhost:8080/api/hello
     context-path: /api
+
+
+
 # springdoc-openapi
 springdoc:
   swagger-ui:
